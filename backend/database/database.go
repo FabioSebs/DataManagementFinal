@@ -1,7 +1,6 @@
 package database
 
 import (
-	"fmt"
 	"log"
 	"os"
 
@@ -27,16 +26,21 @@ func goDotEnvVariable(key string) string {
 	return os.Getenv(key)
 }
 
+// CONNECTION
 func Connect() *gorm.DB {
-	password := goDotEnvVariable("DB_PASSWORD")
-	connectString := fmt.Sprintf("fabrzy@%s/amazon_products", password)
-	connection, err := gorm.Open(mysql.Open(connectString), &gorm.Config{})
+	// sqlDB, err := sql.Open("mysql", "amazon_products")
+
+	// password := goDotEnvVariable("DB_PASSWORD")
+	// connectString := fmt.Sprintf("root@/amazon_products", password)
+	dsn := "fabrzy:Alodia2001!@tcp(localhost:3306)/test"
+	// connection, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
+	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 
 	if err != nil {
 		panic("could not connect to database")
 	}
 
-	DB = connection
+	DB = db
 
 	// connection.AutoMigrate(&models.Table{})
 	return DB

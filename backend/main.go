@@ -1,7 +1,10 @@
 package main
 
 import (
+	"datamanagement/database"
 	"datamanagement/dataset"
+	"datamanagement/models"
+	"fmt"
 )
 
 // func dummy() {
@@ -11,7 +14,8 @@ import (
 func main() {
 	// Cleaning Data
 	dataset.CleanData()
-
+	db := database.Connect()
+	fmt.Println(db.First(&models.Table{}))
 	// //API
 	// app := fiber.New()
 
