@@ -139,9 +139,6 @@ func normalizeProducts(dframe *df.DataFrame) {
 	dframe.Unlock()
 	//SUCESS! WE HAVE UNIQUE ASINS & NAMES ! AKA UNIQUE NUMBER OF PRODUCTS
 
-	fmt.Println(len(uniqueASINS))
-	fmt.Println(len(uniqueNames))
-
 	//PRODUCT ID COLUMN!
 	col1 := df.NewSeriesInt64("product_id", nil, 0)
 	for _, val := range id {

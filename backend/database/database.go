@@ -28,20 +28,14 @@ func goDotEnvVariable(key string) string {
 
 // CONNECTION
 func Connect() *gorm.DB {
-	// sqlDB, err := sql.Open("mysql", "amazon_products")
+	dsn := "root:@tcp(localhost:3306)/amazon_products"
 
-	// password := goDotEnvVariable("DB_PASSWORD")
-	// connectString := fmt.Sprintf("root@/amazon_products", password)
-	dsn := "fabrzy:Alodia2001!@tcp(localhost:3306)/test"
-	// connection, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 
 	if err != nil {
 		panic("could not connect to database")
 	}
-
 	DB = db
-
 	// connection.AutoMigrate(&models.Table{})
 	return DB
 }

@@ -1,10 +1,11 @@
 package main
 
 import (
-	"datamanagement/database"
 	"datamanagement/dataset"
-	"datamanagement/models"
-	"fmt"
+	"datamanagement/routes"
+
+	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 )
 
 // func dummy() {
@@ -14,19 +15,19 @@ import (
 func main() {
 	// Cleaning Data
 	dataset.CleanData()
-	db := database.Connect()
-	fmt.Println(db.First(&models.Table{}))
-	// //API
-	// app := fiber.New()
+	// db := database.Connect()
 
-	// //MIDDLEWARE
-	// app.Use(cors.New(cors.Config{
-	// 	AllowCredentials: true,
-	// }))
+	//API
+	app := fiber.New()
 
-	// //ROUTES
-	// routes.Routes(app)
+	//MIDDLEWARE
+	app.Use(cors.New(cors.Config{
+		AllowCredentials: true,
+	}))
 
-	// // Setup(app)
-	// app.Listen(":5000")
+	//ROUTES
+	routes.Routes(app)
+
+	// Setup(app)
+	app.Listen(":5000")
 }
