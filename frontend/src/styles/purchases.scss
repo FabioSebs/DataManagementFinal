@@ -1,0 +1,12 @@
+.purchases {
+    position: relative;
+    top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: antiquewhite;
+    .purchase {
+        border: 2px solid black;
+    }
+}
