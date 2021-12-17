@@ -1,0 +1,25 @@
+.Gallery {
+  position: relative;
+  top: 120px;
+  background-color: antiquewhite;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.Gallery .products {
+  width: 400px;
+  height: 400px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.Gallery .products .title {
+  overflow: hidden;
+}
+/*# sourceMappingURL=home.css.map */

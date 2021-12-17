@@ -10,6 +10,15 @@ import (
 )
 
 func Routes(app *fiber.App) {
+	//GET ALL EVERYTHING
+	app.Get("/api/everything", func(c *fiber.Ctx) error {
+		db := database.Connect()
+		var products []models.Main
+		fmt.Println("searching")
+		db.Find(&products)
+		return c.JSON(products)
+	})
+
 	//GET ALL PRODUCTS
 	app.Get("/api/products", func(c *fiber.Ctx) error {
 		db := database.Connect()
@@ -74,7 +83,63 @@ func Routes(app *fiber.App) {
 	})
 
 	//CREATE A PRODUCT
-	app.Post("/api/create", func(c *fiber.Ctx) error {
-		return c.SendString("lol")
+	app.Post("/api/create/product", func(c *fiber.Ctx) error {
+		db := database.Connect()
+		payload := models.Product{}
+
+		if err := c.BodyParser(&payload); err != nil {
+			fmt.Println(err)
+			return c.SendStatus(400)
+		}
+
+		db.Create(&payload)
+
+		return c.SendStatus(200)
+	})
+
+	//CREATE A REVIEW
+	app.Post("/api/create/review", func(c *fiber.Ctx) error {
+		db := database.Connect()
+		payload := models.Review{}
+
+		if err := c.BodyParser(&payload); err != nil {
+			fmt.Println(err)
+			return c.SendStatus(400)
+		}
+
+		db.Create(&payload)
+
+		return c.SendStatus(200)
+	})
+
+	//UTILITY ROUTES
+	app.Get("/api/lastrecord/:table", func(c *fiber.Ctx) error {
+		db := database.Connect()
+
+		switch c.Params("table") {
+		case "products":
+			var prodId struct {
+				Product_id int `json:"product_id"`
+			}
+			db.Table("products").Last(&prodId)
+			return c.JSON(prodId)
+
+		case "purchases":
+			var purchaseId struct {
+				Purchase_id int `json:"purchase_id"`
+			}
+			db.Table("purchases").Last(&purchaseId)
+			return c.JSON(purchaseId)
+
+		case "reviews":
+			var reviewId struct {
+				Review_id int `json:"review_id"`
+			}
+			db.Table("reviews").Last(&reviewId)
+			return c.JSON(reviewId)
+
+		default:
+			return c.SendStatus(200)
+		}
 	})
 }

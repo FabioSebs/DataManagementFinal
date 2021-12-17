@@ -1,0 +1,139 @@
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  top: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 120px;
+  width: 100%;
+  position: fixed;
+  z-index: 5;
+  background-color: #191d33;
+  color: black;
+}
+
+.nav .logo {
+  height: 7rem;
+  width: 7rem;
+  cursor: pointer;
+}
+
+.nav .hamburger {
+  background-color: transparent;
+  margin-right: 0.8em;
+  border: none;
+}
+
+.nav .hamburger:hover {
+  cursor: pointer;
+}
+
+.nav .hamburger span {
+  display: block;
+  width: 20px;
+  height: 3px;
+  background-color: white;
+  margin-bottom: 1.5px;
+}
+
+.nav .nav-elements {
+  background-color: #191d33;
+}
+
+.nav .nav-elements a {
+  text-decoration: none;
+  margin: 0 1em;
+  color: white;
+  margin-top: 2px;
+  position: relative;
+  font-size: 25px;
+  background-color: #191d33;
+  border: none;
+}
+
+.nav .nav-elements a span {
+  position: absolute;
+  background-color: #191d33;
+  height: 2px;
+  width: 100%;
+  top: 32px;
+  visibility: hidden;
+}
+
+.nav .nav-elements a svg {
+  position: absolute;
+  left: -25px;
+  top: 5px;
+}
+
+.nav .nav-elements a:hover span {
+  visibility: visible;
+}
+
+@media screen and (max-width: 1300px) {
+  .nav-elements {
+    display: none;
+    background-color: #191d33;
+    color: black;
+  }
+  .nav-elements button {
+    background-color: white;
+    color: black;
+  }
+  .nav-elements.active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    color: white;
+    background-color: #191d33 !important;
+  }
+  .nav-elements.active a {
+    transition: background-color 1s ease, color 1s ease;
+    -webkit-transition: background-color 1s ease, color 1s ease;
+    color: white;
+    background-color: #191d33 !important;
+    margin: 0;
+    padding: 0.4em 0;
+  }
+  .nav-elements.active a span {
+    display: block;
+    top: 50px;
+  }
+  .nav-elements.active a:hover {
+    cursor: pointer;
+    background-color: red !important;
+  }
+  .nav.active {
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    background-color: #191d33;
+  }
+  .nav.active .hamburger span {
+    background-color: #191d33;
+  }
+  .nav.active .logo {
+    -webkit-filter: invert(1);
+            filter: invert(1);
+  }
+}
+
+@media all and (min-width: 1300px) {
+  .hamburger {
+    display: none;
+  }
+}
+/*# sourceMappingURL=navbar.css.map */
