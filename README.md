@@ -106,7 +106,30 @@ Using Go as our backend language will boost the performance of our Application c
 
 We use two curicial packages from the Go ecosystem to have our backend working and that is _GoFiber_ and _GORM_. GoFiber will allow us to have endpoints that our front end can make HTTP requests to and recieve a response! Also to have our controller logic to be exexcuted so the backend can read/write to the Database. That is when GORM comes in. GORM is an Object Relational Model that maps functions of the package to SQL Queries so it abstracts all of the SQL code away from the backend. To explain more lets show off the structure of our backend.
 
+### Connecting to Database
+
+Connecting to our Database is done using GORM as they have a driver for mysql and connects us to our database using a DSN.
+
+```go
+// CONNECTION
+func Connect() *gorm.DB {
+	dsn := "root:@tcp(localhost:3306)/amazon_products"
+
+	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
+
+	if err != nil {
+		panic("could not connect to database")
+	}
+	DB = db
+	// connection.AutoMigrate(&models.Table{})
+	return DB
+}
+
+```
+
 ### Models
+
+We make models with the same exact column names as our tables in MySQL. We also give them struct tags so GoFiber can send responses and parse them to be sent as valid JSON. This is needed for our frontend so we can access the data and display it to the website.
 
 ```go
 package models
@@ -140,6 +163,8 @@ type Purchase struct {
 ```
 
 ### Routes
+
+These are our Routes otherwise known as endpoints. Every single Route has its own unique purpose and is known as controller logic to be ran when the View (Website) makes a request to the Backend. We have commented at the top of every Route it's purpose to help digest the code.
 
 ```go
 func Routes(app *fiber.App) {
