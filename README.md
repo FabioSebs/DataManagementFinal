@@ -1,25 +1,24 @@
 # Data Management Final Project
 
-> Mock Amazon DB Management FullStack Website that follows MVC Model and extracts information from Relational Database.
+- Mock Amazon DB Management FullStack Website that follows MVC Model and extracts information from Relational Database.
 
-> Frontend is done with popular ReactJS UI Library.
+- Frontend is done with popular ReactJS UI Library.
 
-> Backend/API is done with GO's blazing fast web framework GoFiber
+- Backend/API is done with GO's blazing fast web framework GoFiber
 
-> RDMS is MySQL and is accessed by Go's ORM Library, GORM.
+- RDMS is MySQL and is accessed by Go's ORM Library, GORM.
 
-> Dataset can be found here: [Dataset](https://www.kaggle.com/nehaprabhavalkar/indian-products-on-amazon)
+- Dataset can be found here: [Dataset](https://www.kaggle.com/nehaprabhavalkar/indian-products-on-amazon)
 
 ---
 
 ## Technologies Used
 
-<img src="https://cdn0.iconfinder.com/data/icons/logos-brands-in-colors/128/react-256.png" width="50" height="50">
-<img src="https://img.icons8.com/color/2x/golang.png" width="50" height="50"/> 
-<img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-html-5-256.png" width="50" height="50"/>
-<img src="https://cdn4.iconfinder.com/data/icons/logos-3/181/MySQL-256.png" width="50" height="50"/>
-<img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-128.png" width="50" height="50">
-
+<img src="https://cdn0.iconfinder.com/data/icons/logos-brands-in-colors/128/react-256.png" width="50" height="50" style="display:inline">
+<img src="https://img.icons8.com/color/2x/golang.png" width="50" height="50" style="display:inline"/> 
+<img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-html-5-256.png" width="50" height="50" style="display:inline"/>
+<img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-128.png" width="50" height="50" style="display:inline" />
+<img src="https://cdn4.iconfinder.com/data/icons/logos-3/181/MySQL-256.png" width="50" height="50" style="display:inline"/>
 ---
 
 ## Database
@@ -135,24 +134,6 @@ type Purchase struct {
 	Date        string `json:"date"`
 }
 
-```
-
-### Main Function
-
-```go
-	//API
-	app := fiber.New()
-
-	//MIDDLEWARE
-	app.Use(cors.New(cors.Config{
-		AllowCredentials: true,
-	}))
-
-	//ROUTES
-	routes.Routes(app)
-
-	// Setup(app)
-	app.Listen(":5000")
 ```
 
 ### Routes
@@ -292,6 +273,24 @@ func Routes(app *fiber.App) {
 		}
 	})
 }
+```
+
+### Main Function
+
+```go
+	//API
+	app := fiber.New()
+
+	//MIDDLEWARE
+	app.Use(cors.New(cors.Config{
+		AllowCredentials: true,
+	}))
+
+	//ROUTES
+	routes.Routes(app)
+
+	// Setup(app)
+	app.Listen(":5000")
 ```
 
 ---
