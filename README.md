@@ -14,12 +14,13 @@
 
 ## Technologies Used
 
+<div style="display:flex">
 <img src="https://cdn0.iconfinder.com/data/icons/logos-brands-in-colors/128/react-256.png" width="50" height="50" style="display:inline">
 <img src="https://img.icons8.com/color/2x/golang.png" width="50" height="50" style="display:inline"/> 
 <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-html-5-256.png" width="50" height="50" style="display:inline"/>
 <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-128.png" width="50" height="50" style="display:inline" />
 <img src="https://cdn4.iconfinder.com/data/icons/logos-3/181/MySQL-256.png" width="50" height="50" style="display:inline"/>
----
+</div>
 
 ## Database
 
