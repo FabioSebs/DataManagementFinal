@@ -5,6 +5,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import PaidIcon from '@mui/icons-material/Paid';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RateReviewIcon from '@mui/icons-material/RateReview';
+import SearchIcon from '@mui/icons-material/Search';
 
 
 function Navbar() {
@@ -44,6 +45,7 @@ function Navbar() {
                 <a href="/reviews" ><span></span> <RateReviewIcon /> Reviews</a>
                 <a href="/purchases" ><span></span> <PaidIcon />Purchases</a>
                 <a href="/create" ><span></span>  <AddCircleOutlineIcon /> Create </a>
+                <a href="/search" ><span></span>  <SearchIcon /> Search </a>
             </div>
         </nav>
     )

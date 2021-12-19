@@ -1,0 +1,34 @@
+.createContainer {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 150px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.createContainer .createForm {
+  margin: 0 2rem;
+}
+
+.createContainer .titleReview {
+  margin-top: 2em;
+}
+
+.createContainer .success {
+  position: relative;
+  top: 40px;
+  font-size: 40px;
+  color: #06e606;
+}
+/*# sourceMappingURL=create.css.map */

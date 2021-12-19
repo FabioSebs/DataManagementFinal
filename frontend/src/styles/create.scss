@@ -1,0 +1,24 @@
+.createContainer {
+    position: relative;
+    display: flex;
+    top: 150px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+
+    .titleProd {
+    }
+    .createForm {
+        margin: 0 2rem;
+    }
+    .titleReview {
+        margin-top: 2em;
+    }
+    .success {
+        position: relative;
+        top: 40px;
+        font-size: 40px;
+        color: rgb(6, 230, 6);
+    }
+}

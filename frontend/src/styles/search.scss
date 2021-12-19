@@ -1,0 +1,29 @@
+div.searchContainer {
+    position: relative;
+    top: 150px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    .searchForm {
+        display: flex;
+        flex-direction: column;
+        label {
+            margin-top: 1em;
+        }
+        button {
+            margin-bottom: 1em;
+        }
+    }
+}
+
+div.searchResults {
+    position: relative;
+    top: 170px;
+    text-align: center;
+
+    .cell {
+        width: auto;
+        padding: 0 3rem;
+    }
+}
