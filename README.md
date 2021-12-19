@@ -50,7 +50,7 @@ func CleanData() {
 
 Next once the data is clean we have to normalize this big dataset so we reduce redundancy in our tables and get faster reading and writing times for our database. For our implementation we manually made 3 functions to normalize our csv file into 3 seperate csv files.
 
-1. products.csv --> cleaned.csv &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _2783 Records_
+1. cleaned.csv &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _2783 Records_
 2. products*normalized.csv &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \_145 Records*
 3. reviews*normalized.csv &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \_2783 Records*
 4. purchases*normalized.csv &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \_2783 Records*
@@ -62,7 +62,7 @@ Next once the data is clean we have to normalize this big dataset so we reduce r
 	normalizePurchase(df)
 ```
 
-The best part is that we reduced the number of records of a product from 2783 to 145! Since we removed the dependency column of rating,review, and date we find that our database really only has 145 products to play with. Reading our database for a product just got incredibly faster :D!
+The best part is that we reduced the number of records of products from 2783 to 145! Since we removed the dependency column of rating,review, and date we find that our database really only has 145 products to play with. Reading our database for a product just got incredibly faster :D!
 
 ### Putting Data into MYSQL
 
@@ -95,6 +95,8 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 (PurchaseID, ProductID, Date);
 ```
+
+Now that we have a database with 4 tables (Main, Products, Reviews, Purchases) we can now start making our backend that will be able to interact with our database. By interact we mean we can retrieve data , we can also create data, and we can delete data. The next section will demonstrate the backend code and how it's used to interact with our tables
 
 ---
 
