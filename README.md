@@ -1,6 +1,6 @@
 # Data Management Final Project
 
-<iframe src="https://giphy.com/embed/ckf5DOHu8j39oMD6FV" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+![Demo](https://media0.giphy.com/media/ckf5DOHu8j39oMD6FV/giphy.gif)
 
 - Mock Amazon DB Management FullStack Website that follows MVC Model and extracts information from Relational Database.
 
