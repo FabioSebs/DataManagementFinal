@@ -98,7 +98,9 @@ IGNORE 1 ROWS
 (PurchaseID, ProductID, Date);
 ```
 
-Now that we have a database with 4 tables (Main, Products, Reviews, Purchases) we can now start making our backend that will be able to interact with our database. By interact we mean we can retrieve data , we can also create data, and we can delete data. The next section will demonstrate the backend code and how it's used to interact with our tables
+Now that we have a database with 4 tables (Main, Products, Reviews, Purchases) we can now start making our backend that will be able to interact with our database. By interact we mean we can retrieve data , we can also create data, and we can delete data. The next section will demonstrate the backend code and how it's used to interact with our tables. Additionaly here is our schema to further clarify.
+
+![Schema](https://64.media.tumblr.com/5403b9d4ef4dc4845ee154e2171fba84/f683a1e8422dbcfe-d3/s1280x1920/fecbe661c8870e16cf1e952abd15e943a52b5149.png)
 
 ---
 
