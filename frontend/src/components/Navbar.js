@@ -6,6 +6,7 @@ import PaidIcon from '@mui/icons-material/Paid';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RateReviewIcon from '@mui/icons-material/RateReview';
 import SearchIcon from '@mui/icons-material/Search';
+import LoginIcon from '@mui/icons-material/Login';
 
 
 function Navbar() {
@@ -32,7 +33,7 @@ function Navbar() {
     return (
         <nav className='nav'>
             {/* Logo */}
-            <img src={Logo} alt="Amazon Logo" className="logo" />
+            {/* <img src={Logo} alt="Amazon Logo" className="logo" /> */}
             {/* Hamburger */}
             <button className="hamburger" onClick={handleClick}>
                 <span></span>
@@ -46,6 +47,7 @@ function Navbar() {
                 <a href="/purchases" ><span></span> <PaidIcon />Purchases</a>
                 <a href="/create" ><span></span>  <AddCircleOutlineIcon /> Create </a>
                 <a href="/search" ><span></span>  <SearchIcon /> Search </a>
+                <a href="/login" ><span></span>  <LoginIcon /> Login </a>
             </div>
         </nav>
     )

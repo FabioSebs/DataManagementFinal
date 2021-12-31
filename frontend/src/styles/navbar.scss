@@ -1,13 +1,13 @@
 .nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     top: 0;
     align-items: center;
-    height: 120px;
+    height: 80px;
     width: 100%;
     position: fixed;
     z-index: 5;
-    background-color: rgb(25, 29, 51);
+    background-color: #006266;
     color: black;
 
     //Logo
@@ -37,7 +37,7 @@
 
     //Nav Elements
     .nav-elements {
-        background-color: rgb(25, 29, 51);
+        background-color: #006266;
         a {
             text-decoration: none;
             margin: 0 1em;
@@ -45,12 +45,12 @@
             margin-top: 2px;
             position: relative;
             font-size: 25px;
-            background-color: rgb(25, 29, 51);
+            background-color: #006266;
             border: none;
 
             span {
                 position: absolute;
-                background-color: rgb(25, 29, 51);
+                background-color: white;
                 height: 2px;
                 width: 100%;
                 top: 32px;

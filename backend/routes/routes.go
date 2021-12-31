@@ -112,6 +112,50 @@ func Routes(app *fiber.App) {
 		return c.SendStatus(200)
 	})
 
+	//DELETE A PRODUCT
+	app.Delete("/api/delete/product/:id", func(c *fiber.Ctx) error {
+		db := database.Connect()
+		payload := models.Product{}
+		db.Where("product_id = ?", c.Params("id")).Delete(&payload)
+		return c.SendStatus(200)
+	})
+
+	//DELETE A REVIEW
+	app.Delete("/api/delete/review/:id", func(c *fiber.Ctx) error {
+		db := database.Connect()
+		payload := models.Review{}
+		db.Where("review_id = ?", c.Params("id")).Delete(&payload)
+		return c.SendStatus(200)
+	})
+
+	//UPDATE A PRODUCT
+	app.Put("/api/update/product/:id", func(c *fiber.Ctx) error {
+		db := database.Connect()
+
+		payload := models.Product{}
+
+		if err := c.BodyParser(&payload); err != nil {
+			return err
+		}
+
+		db.Model(models.Product{}).Where("product_id = ?", c.Params("id")).Update("name", payload.Name)
+		return c.SendStatus(200)
+	})
+
+	//UPDATE A REVIEW
+	app.Put("/api/update/review/:id", func(c *fiber.Ctx) error {
+		db := database.Connect()
+
+		payload := models.Review{}
+
+		if err := c.BodyParser(&payload); err != nil {
+			return err
+		}
+
+		db.Model(models.Review{}).Where("review_id = ?", c.Params("id")).Update("reviews", payload.Reviews).Update("rating", payload.Rating)
+		return c.SendStatus(200)
+	})
+
 	//UTILITY ROUTES
 	app.Get("/api/lastrecord/:table", func(c *fiber.Ctx) error {
 		db := database.Connect()

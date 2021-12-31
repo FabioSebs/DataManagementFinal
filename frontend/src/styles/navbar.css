@@ -2,18 +2,18 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   top: 0;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 120px;
+  height: 80px;
   width: 100%;
   position: fixed;
   z-index: 5;
-  background-color: #191d33;
+  background-color: #006266;
   color: black;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .nav .nav-elements {
-  background-color: #191d33;
+  background-color: #006266;
 }
 
 .nav .nav-elements a {
@@ -52,13 +52,13 @@
   margin-top: 2px;
   position: relative;
   font-size: 25px;
-  background-color: #191d33;
+  background-color: #006266;
   border: none;
 }
 
 .nav .nav-elements a span {
   position: absolute;
-  background-color: #191d33;
+  background-color: white;
   height: 2px;
   width: 100%;
   top: 32px;
