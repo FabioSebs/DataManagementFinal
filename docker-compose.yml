@@ -1,0 +1,64 @@
+version: '3'
+
+services:
+
+  frontend:
+    container_name: frontend
+
+    build:
+      context: frontend/
+
+    ports:
+      - "3000:3000"
+
+    networks:
+      - connection
+
+  backend:
+    container_name: backend
+
+    depends_on:
+      - db
+
+    links:
+      - db
+
+    restart: on-failure
+
+    ports:
+      - "5000:5000"
+
+    build:
+      context: backend/
+
+    networks:
+      - connection
+
+  db:
+    image: mysql:5.7
+
+    container_name: db
+
+    environment:
+      MYSQL_DATABASE: 'amazon_products'
+      MYSQL_ROOT_PASSWORD: ''
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+
+    volumes:
+      - 'my-db:/var/lib/mysql'
+
+    ports:
+      - "3307:3306"
+
+    expose:
+      - "3306"
+
+    networks:
+      - connection
+
+volumes:
+  my-db: null
+
+networks:
+  connection:
+    driver: bridge
