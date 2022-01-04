@@ -1,0 +1,64 @@
+What can Kubernetes do for you?!
+
+Well we know thta containers help package applications to a nice environment where developers can work together regaurdless of their machines. Kubernetes helps you make sure those containerized applications run where and when you want. Additionally to meet the demand of having applicatoins up and available 24/7, kubernetes can also helo you with this. 
+
+We will go over:
+
+1) Create a Kubernetes Cluster-
+
+The function of Kubernetes is coordinate a highly available cluster of computers to work as a single unit and be all connected. These computers however have to be in a containerized form since we need the application not tied to a specific machine that may be different to others. This is called decoupling an application from an individual host. Kubernetes automates the distribution and scheduling of application containers across a cluster in a more efficient way.
+
+A Kubernetes cluster consists of two type of resources and that is Control Plane and Nodes. 
+
+The Control Plane is esponsible for managing the cluster. The CP coordinates all activities in your cluster such as scheduling applications, maintaining state, scaling, and rolling out new updates.
+
+Now a Node is a VM or physical computer that serves as a worker machine in a Kubernetes Cluster. Each node has a Kubelet, which is an agent for managing the node and communicating with the Kubernetes control plane. The node also should have container tools such as containerd or Docker. One good tip is that a Kubernetes cluster that handles a lot of traffic should always have a minimum of three nodes because if one node goes down both an etcd member and a control plane instance is lost. This risk is mitigated by adding more control plane nodes. 
+
+When you deploy applications on Kubernetes you tell the control plane to start the application containers. The CP schedules the containers to run on cluster's nodes. How do the nodes communicate with the Control Plane?? They use the Kubernetes API which the Control Plane exposes. 
+
+To get started with Kubernetes development you can use Minikube. Minikube is a lightweight Kubernetes tool that creates a VM on your local machine and deploys a simple cluster containing only one node. 
+
+
+
+2) Deploy an App-
+
+Once you have running Kubernetes cluster, you can deploy your containerized applications on top of it. To do this you have to create a Kubernetes Deployment config file. This config file instructs Kubernetes how to create and update instances of your application. Once you have created a Deployment the kubernetes control plane schedules the application instances included in that Deployment to run on individual Nodes in that cluster. 
+
+There is something called a Kubernetes Deployment Controller that continously monitors your instances. The KDC makes sure to replace any instances that go down for any reason. This provides a self-healing mechanism to address machine failure or maintenance.
+
+Kubectl is the Kubernetes CLI. 
+
+When you create a Deployment , kubernetes creates a Pod to host your application instance. A pod is a Kubernetes abstraction that represents a group of one or more application containers such as Docker. These pods actually can have more features like shared storagevolumes, networking, etc. A pod's job is pretty much to hold your container. The containers in a Pod share an IP Address and port space and share the same context as the node they live in. 
+
+Pods are the most smallest unit in the Kubernetes space. When we create a deployment it creates pods with containers inside of them. Each pod is tied to the Node where it is scheduled and remains there until termination. A pod always runs on a Node. A node is a worker machine in Kubernetes and may be either a virtual or a physical machine. Each Node is managed by the control plane. A Node can have multiple pods, and the kubernetes Control Plane automatically handles scheduling the pods across the Nodes in the cluster. The control plane also takes into account the Node's resources as well. 
+
+To recap on Kubernetes Nodes runs at least:
+
+Kubelet, which is a process responsible for communicating between the Kubernetes CP and the Node. it manages the Pods and the containers running on a machine.
+A container runtime like Docker responsible for pulling the container image from a registry, unpacking the container, and running the application.
+
+3) Explore your App-
+
+Kubernetes Pods are mortal beings, they in fact have a lifecycle. When a worker node dies, the Pods running on the Node are also lost. In this case, a ReplicaSet might then dynamically drive the cluster back to desired state via creation of new Pods to keep your application running.
+
+Services- is an abstraction in Kubernetes which defines a logical set of Pods and a policy by which to access them. Services enable a loose coupling between dependent Pods. A service is defined using YAML or JSON. The set of Pods targeted by a Service is usually determined by a LabelSelector and is how to access all the Pods. 
+
+Although each Pod has a unique IP address, those IPs are not exposed outside the cluster without a Service. Services allow your application to recieve traffic. Services can be exposed in different ways by specifying a type in the ServicesSpec property. 
+
+A service routes traffic across a set of Pods. Services are the abstraction that allow pods to die and replicate in Kubernetes without impacting your application. Discovery and routing among dependent Pods , such as the frontend and backend of your app, is handled by the Kubernetes Services.
+
+Services match a set of Pods using labels and selectors. A grouping primitive that allows logical operation on objects in Kubernetes. Labels are key/value pairs attached to objects and can be used in any number of ways. Such as designate objects for development, testing, and production. Embed version tags. Classify an object using tags.
+
+Labels can be attached to objects at creation time or later on. They can be modified at any time. Let's expose our application now using a Service and apply some labels. 
+
+4) Expose your App Publicly- 
+
+5) Scale your Application-
+Running Multiple Instances of Your Application
+
+Scaling is accomplished by changing the number of replicas in a Deployment. Scaling out a deployment will ensure new pods are created and scheduled to Nodes with available resources. Scaling will increase the number of Pods to the new desired state. Kubernetes also supports autoscaling of Pods, but it is outside of the scope of this tutorial. Scaling to zero is also possible and it will terminate all pods to specified Deployment. 
+
+
+Running multiple instances of an application will require a way to distribute the traffic to all of them. Services have an integrated load-balancer that will distribute the network traffic to all pods of an exposed deployment. Services will monitor the continously the running pods using endpoints, to ensure the traffic is sent only to available pods. 
+
+6) Update your Application
