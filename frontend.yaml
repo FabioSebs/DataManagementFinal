@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Deployment
+metdata:
+  name: radiant-frontend
+  labels:
+    app: radiantUI
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: radiantUI
+  template:
+    metadata:
+      labels:
+        app: radiantUI
+
+    spec:
+      containers: 
+      - name: frontend
+        image: fabrzy/radiant-frontend
+        ports:
+          - containerPort: 3000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: radiantService
+spec:
+  selector:
+    app: radiantUI
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+      nodePort: 30000
