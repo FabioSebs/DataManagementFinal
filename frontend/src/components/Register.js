@@ -12,22 +12,25 @@ const Register = () => {
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [hash, setHash] = useState('')
     const [confirmPwd, setConfirmPwd] = useState('')
     const [agree, setAgree] = useState(false)
 
 
-    const handleRegister = async () => {
+    const handleRegister = async (e) => {
+        e.preventDefault();
+
         if ((password === confirmPwd) && agree) {
             try {
-
                 // const salt = crypto.randomBytes(16).toString('hex')
-                const hash = hashPassword(password)
+                const hashed = hashPassword(password)
+                console.log(hashed)
 
                 const res = await axios.post("http://localhost:5000/api/create/user", {
                     first_name: firstName,
                     last_name: lastName,
                     email: email,
-                    password: hash,
+                    password: hashed,
                 })
 
                 console.log(res)

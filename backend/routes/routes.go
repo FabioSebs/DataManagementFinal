@@ -82,6 +82,19 @@ func Routes(app *fiber.App) {
 		return c.JSON(reviews)
 	})
 
+	//GET USER BY EMAIL
+	app.Get("/api/user/:email", func(c *fiber.Ctx) error {
+		db := database.Connect()
+
+		var users []models.User
+
+		email := strings.Trim(c.Params("email"), ":")
+
+		db.Find(&users, "email = ?", email)
+
+		return c.JSON(users)
+	})
+
 	//CREATE A PRODUCT
 	app.Post("/api/create/product", func(c *fiber.Ctx) error {
 		db := database.Connect()
@@ -125,6 +138,28 @@ func Routes(app *fiber.App) {
 		db.Create(&payload)
 
 		return c.SendStatus(200)
+	})
+
+	// LOGIN USER
+	app.Post("/api/login/", func(c *fiber.Ctx) error {
+		db := database.Connect()
+
+		var users []models.User
+
+		payload := struct {
+			Email    string `json:"email"`
+			Password string `json:"password"`
+		}{}
+
+		if err := c.BodyParser(&payload); err != nil {
+			return err
+		}
+
+		fmt.Println(payload.Email)
+
+		db.Find(&users, "password = ?", payload.Password)
+
+		return c.JSON(users)
 	})
 
 	//DELETE A PRODUCT
