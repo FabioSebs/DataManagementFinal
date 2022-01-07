@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import '../styles/create.css'
 import axios from 'axios'
 import Navbar from './Navbar'
+import crypto from 'crypto'
 
 const Create = () => {
     let [productID, setProductID] = useState(undefined)

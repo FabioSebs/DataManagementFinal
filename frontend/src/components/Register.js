@@ -3,7 +3,9 @@ import Navbar from './Navbar'
 import '../styles/register.css'
 import axios from 'axios'
 import Blob from '../images/BlobDesign.PNG'
-import bcrypt from "bcrypt"
+// import bcrypt from 'bcrypt'
+import { hashPassword } from './PasswordHash'
+
 
 const Register = () => {
     const [firstName, setFirstName] = useState('')
@@ -18,15 +20,14 @@ const Register = () => {
         if ((password === confirmPwd) && agree) {
             try {
 
-                const salt = await bcrypt.genSalt(10);
-                setPassword(bcrypt.hash(password, salt))
-
+                // const salt = crypto.randomBytes(16).toString('hex')
+                const hash = hashPassword(password)
 
                 const res = await axios.post("http://localhost:5000/api/create/user", {
                     first_name: firstName,
                     last_name: lastName,
                     email: email,
-                    password: password,
+                    password: hash,
                 })
 
                 console.log(res)
@@ -69,11 +70,11 @@ const Register = () => {
                         <div className='passwordSection'>
                             <div>
                                 <label> Password :</label>
-                                <input className="regformInput" id="regpasswordInput" onChange={e => { setPassword(e.currentTarget.value) }}></input>
+                                <input type="password" className="regformInput" id="regpasswordInput" onChange={e => { setPassword(e.currentTarget.value) }}></input>
                             </div>
                             <div>
                                 <label> Confirm Password :</label>
-                                <input className="regformInput" id="regpasswordConfirmInput" onChange={e => { setConfirmPwd(e.currentTarget.value) }}></input>
+                                <input type="password" className="regformInput" id="regpasswordConfirmInput" onChange={e => { setConfirmPwd(e.currentTarget.value) }}></input>
                             </div>
                         </div>
 

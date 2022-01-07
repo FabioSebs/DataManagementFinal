@@ -44,6 +44,9 @@ const Home = () => {
                     <img src={heroFood} alt="hero" className='heroLogo' />
                 </div>
             </div>
+            <div className='aboutus'>
+                <p>About Us</p>
+            </div>
         </>
     )
 }
