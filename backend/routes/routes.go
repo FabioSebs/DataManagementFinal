@@ -112,6 +112,21 @@ func Routes(app *fiber.App) {
 		return c.SendStatus(200)
 	})
 
+	//CREATE A USER
+	app.Post("/api/create/user", func(c *fiber.Ctx) error {
+		db := database.Connect()
+		payload := models.User{}
+
+		if err := c.BodyParser(&payload); err != nil {
+			fmt.Println(err)
+			return c.SendStatus(400)
+		}
+
+		db.Create(&payload)
+
+		return c.SendStatus(200)
+	})
+
 	//DELETE A PRODUCT
 	app.Delete("/api/delete/product/:id", func(c *fiber.Ctx) error {
 		db := database.Connect()

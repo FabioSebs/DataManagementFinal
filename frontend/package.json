@@ -8,11 +8,21 @@
     "@mui/icons-material": "^5.2.4",
     "@mui/material": "^5.2.4",
     "axios": "^0.24.0",
+    "bcrypt": "^5.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router": "^6.1.1",
     "react-router-dom": "^6.1.1",
     "react-scripts": "^5.0.0"
+  },
+  "browser": {
+    "crypto": false,
+    "fs": false,
+    "path": false,
+    "os": false,
+    "net": false,
+    "stream": false,
+    "tls": false
   },
   "scripts": {
     "start": "react-scripts start",

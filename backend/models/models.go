@@ -25,3 +25,11 @@ type Purchase struct {
 	Product_id  int    `json:"product_id"`
 	Date        string `json:"date"`
 }
+
+type User struct {
+	User_id  int    `json:"user_id"`
+	FName    string `json:"first_name"`
+	LName    string `json:"last_name"`
+	Email    string `json:"email"`
+	Password string `json:"password"`
+}
