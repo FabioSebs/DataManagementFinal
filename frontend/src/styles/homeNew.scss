@@ -1,0 +1,138 @@
+.heroGradient {
+    background: rgb(0, 98, 102);
+    background: linear-gradient(180deg, rgba(0, 98, 102, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    display: flex;
+    justify-content: space-between;
+    margin: 0 40px;
+
+    .heroPlaceholder {
+        display: flex;
+        position: absolute;
+        color: #006266;
+        left: 5px;
+        margin-top: 17px;
+        p {
+            margin: 0;
+        }
+    }
+
+    .heroText {
+        color: white;
+        position: relative;
+        top: 200px;
+        margin-left: 50px;
+
+        input {
+            padding: 2px;
+            margin: 10px 2px;
+            width: 350px;
+            height: 30px;
+            border-radius: 10px;
+            border: none;
+            background-color: #f3f7ff;
+            color: #006266;
+
+            ::placeholder {
+                color: #006266;
+            }
+        }
+
+        .categories {
+            display: flex;
+            gap: 25px;
+            button {
+                color: white;
+                width: 100px;
+                height: 50px;
+                border-radius: 50px;
+                border: 1px solid white;
+                background-color: transparent;
+
+                &:hover {
+                    background-color: #fac372;
+                    color: #006266;
+                }
+            }
+        }
+
+        #welcome {
+            font-family: "Fredoka One", cursive;
+            font-family: "Open Sans", sans-serif;
+            font-size: 30px;
+        }
+        #brand {
+            font-family: "Fjalla One", sans-serif;
+            font-family: "Fredoka One", cursive;
+            font-family: "Open Sans", sans-serif;
+            font-size: 80px;
+            font-weight: bolder;
+            margin: 0;
+        }
+        #description {
+            font-family: "Fredoka One", cursive;
+            font-family: "Open Sans", sans-serif;
+            font-size: 25px;
+        }
+    }
+
+    .heroImgContainer {
+        .heroLogo {
+            position: relative;
+            top: 40px;
+            height: 800px;
+            width: 1200px;
+        }
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .heroText {
+        color: white;
+        position: relative;
+        top: 200px;
+        margin-left: 50px;
+
+        input {
+            padding: 2px;
+            margin: 10px 2px;
+            width: 350px;
+            height: 30px;
+            border-radius: 10px;
+            border: none;
+            background-color: #f3f7ff;
+            color: #006266;
+
+            ::placeholder {
+                color: #006266;
+            }
+        }
+    }
+    #welcome {
+        font-family: "Fredoka One", cursive;
+        font-family: "Open Sans", sans-serif;
+        font-size: 20px !important;
+    }
+    #brand {
+        font-family: "Fjalla One", sans-serif;
+        font-family: "Fredoka One", cursive;
+        font-family: "Open Sans", sans-serif;
+        font-size: 50px !important;
+        font-weight: bolder;
+        margin: 0;
+    }
+    #description {
+        font-family: "Fredoka One", cursive;
+        font-family: "Open Sans", sans-serif;
+        font-size: 15px !important;
+    }
+
+    .heroImgContainer {
+        .heroLogo {
+            position: relative;
+            top: 150px !important;
+            height: 400px !important;
+            width: 600px !important;
+            padding-bottom: 300px;
+        }
+    }
+}

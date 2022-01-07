@@ -1,55 +1,51 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import amazonIMG from "../images/fakeamazonlogo.jpg";
-import "../styles/home.css"
-import Navbar from "./Navbar";
+import React, { useState } from 'react'
+import HomeNav from './HomeNav'
+import heroFood from '../images/heroFoodBG.PNG'
+import '../styles/homeNew.css'
+import SearchIcon from '@mui/icons-material/Search';
 
 const Home = () => {
-  let [productName, setProductName] = useState([])
+    const [showSearch, setShowSearch] = useState(true)
 
-
-  const productList = [];
-
-  // AXIOS CALL  -- !!!! ADD DATA INTO PRODUCT LIST AS PRODUCT OBJECT !!!!!
-  const fetchProducts = async () => {
-    try {
-      const productList = []
-      const res = await axios.get("http://localhost:5000/api/products");
-      console.log(res.data)
-
-      for (let x = 0; x <= 30; x++) {
-        productList.push(res.data[x])
-      }
-      setProductName(productList)
-    } catch (error) {
-      console.log(error);
+    const placeholder = () => {
+        return (
+            <div className='heroPlaceholder'>
+                <SearchIcon />
+                <p>search products</p>
+            </div>
+        )
     }
-  };
 
-  useEffect(() => {
-    fetchProducts()
-  }, [])
+    const togglePlaceholder = () => {
+        setShowSearch(!showSearch)
+    }
 
-  return (
-    <>
-      <Navbar />
-      <div className="Gallery">
-        {productName ?
-          productName.map((prod) => {
-            return (
-              <div className="products">
-                <h3 className="title"> {prod.name}</h3>
-                <img src={amazonIMG} alt="amazonprod" height={200} width={200} />
-                <h5 className="price"> {`$${Math.floor(Math.random() * 100)}.99`} </h5>
-                <h6 className="asin"> {prod.asin}</h6>
-              </div>
-            )
-          })
-          : undefined
-        }
-      </div>
-    </>
-  )
-};
+    return (
+        <>
+            <HomeNav />
+            <div className='heroGradient'>
+                <div className='heroText'>
+                    <p id='welcome'> WELCOME TO</p>
+                    <p id='brand'> Radiant Reselling </p>
+                    <p id='description'> Expanding your networking and product across the world. </p>
 
-export default Home;
+
+                    {showSearch && placeholder()}
+
+                    <input type="text" className='heroSearch' onClick={togglePlaceholder} />
+
+                    <div className='categories'>
+                        <button className='groceryButton'> Groceries </button>
+                        <button className='techButton'> Technology </button>
+                        <button className='cosmeticButton'> Cosmetics </button>
+                    </div>
+                </div>
+                <div className='heroImgContainer'>
+                    <img src={heroFood} alt="hero" className='heroLogo' />
+                </div>
+            </div>
+        </>
+    )
+}
+
+export default Home

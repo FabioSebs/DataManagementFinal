@@ -1,0 +1,169 @@
+.homeNav {
+    display: flex;
+    justify-content: flex-end;
+    top: 0;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    z-index: 5;
+    background-color: white;
+    color: black;
+
+    //Logo
+    .logo {
+        height: 7rem;
+        width: 7rem;
+        cursor: pointer;
+    }
+
+    //Hamburger
+    .homeHamburger {
+        background-color: transparent;
+        margin-right: 0.8em;
+        border: none;
+
+        &:hover {
+            cursor: pointer;
+        }
+        span {
+            display: block;
+            width: 20px;
+            height: 3px;
+            background-color: #006266;
+            margin-bottom: 1.5px;
+        }
+    }
+
+    //Nav Elements
+    .home-nav-elements {
+        background-color: white;
+
+        // LOGIN BUTTON
+        #logButton {
+            background-color: #fac372;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            margin-right: 70px;
+
+            span {
+                position: absolute;
+                background-color: #006266;
+                height: 2px;
+                width: 100%;
+                top: 32px;
+                visibility: hidden;
+            }
+
+            &:hover {
+                background-color: #fda829;
+            }
+        }
+
+        // REST OF ELEMENTS
+        a {
+            text-decoration: none;
+            margin: 0 1em;
+            color: #006266;
+            margin-top: 2px;
+            position: relative;
+            font-size: 25px;
+            background-color: white;
+            border: none;
+
+            span {
+                position: absolute;
+                background-color: #006266;
+                height: 2px;
+                width: 100%;
+                top: 32px;
+                visibility: hidden;
+            }
+
+            svg {
+                position: absolute;
+                left: -25px;
+                top: 5px;
+                background-color: white;
+            }
+
+            &:hover {
+                span {
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .home-nav-elements {
+        display: none;
+        background-color: rgb(25, 29, 51);
+        color: black;
+        button {
+            background-color: white;
+            color: black;
+        }
+    }
+
+    //NAV ACTIVE
+    .home-nav-elements.active {
+        // Styling
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        color: #006266;
+        background-color: white !important;
+        // Positioning Anchor Tags
+
+        #logButton {
+            border-radius: 0;
+            margin-right: 0px !important;
+        }
+
+        a {
+            transition: background-color 1s ease, color 1s ease;
+            -webkit-transition: background-color 1s ease, color 1s ease;
+            color: #006266;
+            background-color: white !important;
+            margin: 0;
+            padding: 0.4em 0;
+            span {
+                display: block;
+                top: 50px;
+            }
+
+            &:hover {
+                cursor: pointer;
+
+                background-color: #019aa0 !important;
+            }
+        }
+    }
+
+    .homeNav.active {
+        transition: all 1s ease;
+        -webkit-transition: all 1s ease;
+        background-color: rgb(25, 29, 51);
+        .homeHamburger {
+            span {
+                background-color: rgb(25, 29, 51);
+            }
+        }
+
+        .logo {
+            filter: invert(1);
+        }
+    }
+}
+
+@media all and (min-width: 1300px) {
+    .homeHamburger {
+        display: none;
+    }
+}

@@ -1,4 +1,4 @@
-.nav {
+.homeNav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13,79 +13,100 @@
   width: 100%;
   position: fixed;
   z-index: 5;
-  background-color: #006266;
+  background-color: white;
   color: black;
 }
 
-.nav .logo {
+.homeNav .logo {
   height: 7rem;
   width: 7rem;
   cursor: pointer;
 }
 
-.nav .hamburger {
+.homeNav .homeHamburger {
   background-color: transparent;
   margin-right: 0.8em;
   border: none;
 }
 
-.nav .hamburger:hover {
+.homeNav .homeHamburger:hover {
   cursor: pointer;
 }
 
-.nav .hamburger span {
+.homeNav .homeHamburger span {
   display: block;
   width: 20px;
   height: 3px;
-  background-color: white;
+  background-color: #006266;
   margin-bottom: 1.5px;
 }
 
-.nav .nav-elements {
-  background-color: #006266;
-}
-
-.nav .nav-elements a {
-  text-decoration: none;
-  margin: 0 1em;
-  color: white;
-  margin-top: 2px;
-  position: relative;
-  font-size: 25px;
-  background-color: #006266;
-  border: none;
-}
-
-.nav .nav-elements a span {
-  position: absolute;
+.homeNav .home-nav-elements {
   background-color: white;
+}
+
+.homeNav .home-nav-elements #logButton {
+  background-color: #fac372;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  margin-right: 70px;
+}
+
+.homeNav .home-nav-elements #logButton span {
+  position: absolute;
+  background-color: #006266;
   height: 2px;
   width: 100%;
   top: 32px;
   visibility: hidden;
 }
 
-.nav .nav-elements a svg {
+.homeNav .home-nav-elements #logButton:hover {
+  background-color: #fda829;
+}
+
+.homeNav .home-nav-elements a {
+  text-decoration: none;
+  margin: 0 1em;
+  color: #006266;
+  margin-top: 2px;
+  position: relative;
+  font-size: 25px;
+  background-color: white;
+  border: none;
+}
+
+.homeNav .home-nav-elements a span {
+  position: absolute;
+  background-color: #006266;
+  height: 2px;
+  width: 100%;
+  top: 32px;
+  visibility: hidden;
+}
+
+.homeNav .home-nav-elements a svg {
   position: absolute;
   left: -25px;
   top: 5px;
+  background-color: white;
 }
 
-.nav .nav-elements a:hover span {
+.homeNav .home-nav-elements a:hover span {
   visibility: visible;
 }
 
 @media screen and (max-width: 1300px) {
-  .nav-elements {
+  .home-nav-elements {
     display: none;
     background-color: #191d33;
     color: black;
   }
-  .nav-elements button {
+  .home-nav-elements button {
     background-color: white;
     color: black;
   }
-  .nav-elements.active {
+  .home-nav-elements.active {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -98,42 +119,46 @@
     width: 100%;
     text-align: center;
     margin: 0;
-    color: white;
-    background-color: #006266 !important;
+    color: #006266;
+    background-color: white !important;
   }
-  .nav-elements.active a {
+  .home-nav-elements.active #logButton {
+    border-radius: 0;
+    margin-right: 0px !important;
+  }
+  .home-nav-elements.active a {
     transition: background-color 1s ease, color 1s ease;
     -webkit-transition: background-color 1s ease, color 1s ease;
-    color: white;
-    background-color: #006266 !important;
+    color: #006266;
+    background-color: white !important;
     margin: 0;
     padding: 0.4em 0;
   }
-  .nav-elements.active a span {
+  .home-nav-elements.active a span {
     display: block;
     top: 50px;
   }
-  .nav-elements.active a:hover {
+  .home-nav-elements.active a:hover {
     cursor: pointer;
     background-color: #019aa0 !important;
   }
-  .nav.active {
+  .homeNav.active {
     transition: all 1s ease;
     -webkit-transition: all 1s ease;
     background-color: #191d33;
   }
-  .nav.active .hamburger span {
+  .homeNav.active .homeHamburger span {
     background-color: #191d33;
   }
-  .nav.active .logo {
+  .homeNav.active .logo {
     -webkit-filter: invert(1);
             filter: invert(1);
   }
 }
 
 @media all and (min-width: 1300px) {
-  .hamburger {
+  .homeHamburger {
     display: none;
   }
 }
-/*# sourceMappingURL=navbar.css.map */
+/*# sourceMappingURL=homeNav.css.map */
