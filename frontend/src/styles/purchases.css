@@ -1,6 +1,123 @@
+.purchasesHero {
+  position: relative;
+  top: 60px;
+  height: 500px;
+  color: white;
+  background: #006266;
+  background: -webkit-gradient(linear, left top, left bottom, from(#006266), to(white));
+  background: linear-gradient(180deg, #006266 0%, white 100%);
+}
+
+.purchasesHero h1 {
+  position: relative;
+  display: block;
+  padding-top: 150px;
+  margin-left: 30px;
+  font-size: 100px;
+  text-shadow: 2px 2px 5px black;
+}
+
+.purchasesHero h2 {
+  position: relative;
+  display: block;
+  margin-left: 40px;
+  font-size: 70px;
+  text-shadow: 2px 2px 5px black;
+}
+
+.tableSearch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
+  top: 70px;
+  text-align: center;
+  color: #9c9696;
+}
+
+.tableSearch .tableSearchLabel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.tableSearch .tableSearchLabel input {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  outline: #9c9696;
+  border: 1px solid #9c9696;
+}
+
+.tableSearch button {
+  margin-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: 0 1em;
+  background-color: #619ea0;
+  border: none;
+  color: white;
+}
+
+.oneResult {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+  position: relative;
+  top: 140px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.oneResult table {
+  border-top-style: solid;
+  border-bottom-style: solid;
+}
+
+.oneResult thead tr th {
+  padding: 1em 2em;
+}
+
+.oneResult tbody tr td {
+  padding: 1em 2em;
+}
+
+#customize {
+  top: 100px;
+}
+
+hr {
+  position: relative;
+  top: 90px;
+  height: 2px;
+  background-color: #7ec8ca;
+  border: 0.5px solid #9cdcdf;
+  margin: 0 2em;
+}
+
 .purchases {
   position: relative;
-  top: 120px;
+  top: 180px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12,10 +129,21 @@
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  background-color: antiquewhite;
+  background-color: white;
 }
 
-.purchases .purchase {
-  border: 2px solid black;
+.purchases .purchaseTable {
+  margin: 0 4em;
+  border-top: 2px solid black;
+}
+
+.purchases .purchaseTable .purchaseColumn th {
+  padding: 1em 0em;
+  border-bottom: 2px solid #e1e1e1;
+}
+
+.purchases .purchaseTable .purchaseRecord td {
+  border-bottom: 1px solid #e1e1e1;
+  padding: 1em 0em;
 }
 /*# sourceMappingURL=purchases.css.map */

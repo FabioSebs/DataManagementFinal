@@ -1,4 +1,5 @@
 .Reviews {
+  margin: 0 4em;
   position: relative;
   top: 120px;
   display: -webkit-box;
@@ -8,10 +9,237 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: aliceblue;
+  background-color: white;
 }
 
-.Reviews .review {
-  border: 1px solid black;
+.Reviews .reviewTable {
+  border: 1px solid #ee5a24;
+  -webkit-box-shadow: 0px 10px 20px black;
+          box-shadow: 0px 10px 20px black;
+}
+
+.Reviews .reviewTable .reviewColumns {
+  color: white;
+  background-color: #006266;
+}
+
+.Reviews .reviewTable .reviewColumns th {
+  padding: 0 2em;
+}
+
+.Reviews .reviewTable .reviewRecord {
+  color: white;
+  text-shadow: 3px 3px 5px black;
+  background-color: #f79f1f;
+}
+
+.Reviews .reviewTable .reviewRecord td {
+  padding: 2em 1em;
+}
+
+div.reviewsBG {
+  position: relative;
+  width: 100%;
+  height: 1000px;
+}
+
+div.reviewsBG .topProducts {
+  position: absolute;
+  z-index: 1;
+  top: 100px;
+  left: 80px;
+  font-size: 160px;
+  color: white;
+  text-shadow: -2px 2px 0 black;
+}
+
+div.reviewsBG img {
+  width: 100%;
+  height: 1200px;
+}
+
+div.titleReviews {
+  position: relative;
+  margin-top: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+div.titleReviews h1 {
+  position: relative;
+  display: inline-block;
+  padding: 1em 3em;
+  background: #e5e5e5;
+  background: -webkit-gradient(linear, left top, right top, from(#e5e5e5), to(white));
+  background: linear-gradient(90deg, #e5e5e5 0%, white 100%);
+  border: 2px solid white;
+  -webkit-box-shadow: -2px 5px 10px black;
+          box-shadow: -2px 5px 10px black;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 1px 1px 5px black;
+}
+
+div.listReviews {
+  position: relative;
+  margin-top: 100px;
+  width: 100%;
+  text-align: center;
+}
+
+div.listReviews h1 {
+  position: relative;
+  display: inline-block;
+  padding: 1em 3em;
+  background: #e5e5e5;
+  background: -webkit-gradient(linear, left top, right top, from(#e5e5e5), to(white));
+  background: linear-gradient(90deg, #e5e5e5 0%, white 100%);
+  border: 2px solid white;
+  -webkit-box-shadow: -2px 5px 10px black;
+          box-shadow: -2px 5px 10px black;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 1px 1px 5px black;
+}
+
+.ratingForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 3;
+  position: absolute;
+  background-color: white;
+  padding: 4em 2em;
+  border-radius: 30px;
+  width: 40%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid #006266;
+  -webkit-box-shadow: 5px 10px 12px black;
+          box-shadow: 5px 10px 12px black;
+}
+
+.ratingForm label {
+  padding: 1em 0;
+  color: #006266;
+  font-size: larger;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.ratingForm label .prodInput {
+  padding: 15px 30px;
+  border-radius: 10px;
+  margin-left: 30px;
+}
+
+.ratingForm label .ratingInput {
+  padding: 15px 30px;
+  border-radius: 10px;
+  margin-left: 60px;
+}
+
+.ratingForm .searchButton {
+  width: 150px;
+  padding: 1em 3em;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  margin-top: 30px;
+  background-color: #006266;
+  color: white;
+}
+
+.reviewFormContainer {
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.reviewFormContainer .reviewForm {
+  display: inline-block;
+  position: relative;
+  width: 40%;
+  margin-left: auto;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin-top: 50px;
+  padding: 5em 3em;
+  background-color: white;
+  border: 2px solid #006266;
+  -webkit-box-shadow: 5px 10px 12px black;
+          box-shadow: 5px 10px 12px black;
+  border-radius: 30px;
+  color: #006266;
+}
+
+.reviewFormContainer .reviewForm label {
+  display: inline-block;
+  padding: 1em 0;
+  color: #006266;
+  font-size: larger;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.reviewFormContainer .reviewForm label .prodInput {
+  padding: 15px 30px;
+  border-radius: 10px;
+  margin-left: 30px;
+  width: 50%;
+}
+
+.reviewFormContainer .reviewForm label .ratingInput {
+  padding: 15px 30px;
+  border-radius: 10px;
+  margin-left: 30px;
+  height: 100px;
+  width: 50%;
+}
+
+.reviewFormContainer .reviewForm .searchButton {
+  display: inline-block;
+  width: 150px;
+  padding: 1em 3em;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  margin-top: 30px;
+  background-color: #006266;
+  color: white;
 }
 /*# sourceMappingURL=reviews.css.map */

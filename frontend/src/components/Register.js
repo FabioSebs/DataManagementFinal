@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Navbar from './Navbar'
 import '../styles/register.css'
 import axios from 'axios'
@@ -12,13 +13,15 @@ const Register = () => {
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [hash, setHash] = useState('')
+    const [created, setCreated] = useState(false)
     const [confirmPwd, setConfirmPwd] = useState('')
     const [agree, setAgree] = useState(false)
+    let navigate = useNavigate()
 
 
     const handleRegister = async (e) => {
         e.preventDefault();
+
 
         if ((password === confirmPwd) && agree) {
             try {
@@ -35,6 +38,11 @@ const Register = () => {
 
                 console.log(res)
 
+                setCreated(true)
+
+                setTimeout(() => {
+                    navigate('/login')
+                }, 1000)
             } catch (error) {
                 console.log(error)
             }
@@ -87,6 +95,8 @@ const Register = () => {
                         </div>
 
                         <button onClick={handleRegister}>Create Account</button>
+
+                        {created && <h3 style={{ color: "green" }}>Account Created!</h3>}
 
                         <h4>Have an account? <a className="reglink" href="/login">  Login </a></h4>
                     </form>

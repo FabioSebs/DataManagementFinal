@@ -1,16 +1,200 @@
 .Reviews {
+    margin: 0 4em;
     position: relative;
     top: 120px;
     display: flex;
     flex-direction: column;
-    background-color: aliceblue;
-    .review {
-        border: 1px solid black;
-        .title {
+    background-color: white;
+
+    .reviewTable {
+        border: 1px solid #ee5a24;
+        box-shadow: 0px 10px 20px black;
+        .reviewColumns {
+            color: white;
+            background-color: #006266;
+            th {
+                padding: 0 2em;
+            }
         }
-        .reviewText {
+
+        .reviewRecord {
+            color: white;
+            text-shadow: 3px 3px 5px black;
+            background-color: #f79f1f;
+            td {
+                padding: 2em 1em;
+            }
         }
-        .rating {
+    }
+}
+
+// style={{ background: `url(${reviewBG}) no-repeat center center fixed`, width: "100%", height: "1000px", backgroundSize: "cover" }
+div.reviewsBG {
+    position: relative;
+    width: 100%;
+    height: 1000px;
+
+    .topProducts {
+        position: absolute;
+        z-index: 1;
+        top: 100px;
+        left: 80px;
+        font-size: 160px;
+        color: white;
+        text-shadow: -2px 2px 0 black;
+    }
+
+    img {
+        width: 100%;
+        height: 1200px;
+    }
+}
+
+div.titleReviews {
+    position: relative;
+    margin-top: 500px;
+    width: 100%;
+    text-align: center;
+
+    h1 {
+        position: relative;
+        display: inline-block;
+        padding: 1em 3em;
+        background: rgb(229, 229, 229);
+        background: linear-gradient(90deg, rgba(229, 229, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
+        border: 2px solid white;
+        box-shadow: -2px 5px 10px black;
+        text-transform: uppercase;
+        color: white;
+        text-shadow: 1px 1px 5px black;
+    }
+}
+
+div.listReviews {
+    position: relative;
+    margin-top: 100px;
+    width: 100%;
+    text-align: center;
+
+    h1 {
+        position: relative;
+        display: inline-block;
+        padding: 1em 3em;
+        background: rgb(229, 229, 229);
+        background: linear-gradient(90deg, rgba(229, 229, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
+        border: 2px solid white;
+        box-shadow: -2px 5px 10px black;
+        text-transform: uppercase;
+        color: white;
+        text-shadow: 1px 1px 5px black;
+    }
+}
+
+.ratingForm {
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+    position: absolute;
+    background-color: white;
+    padding: 4em 2em;
+    border-radius: 30px;
+    width: 40%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #006266;
+    box-shadow: 5px 10px 12px black;
+
+    label {
+        padding: 1em 0;
+        color: #006266;
+        font-size: larger;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .prodInput {
+            padding: 15px 30px;
+            border-radius: 10px;
+            margin-left: 30px;
+        }
+
+        .ratingInput {
+            padding: 15px 30px;
+            border-radius: 10px;
+            margin-left: 60px;
+        }
+    }
+    .searchButton {
+        width: 150px;
+        padding: 1em 3em;
+        border-radius: 20px;
+        outline: none;
+        border: none;
+        margin-top: 30px;
+        background-color: #006266;
+        color: white;
+    }
+}
+.reviewFormContainer {
+    text-align: center;
+    align-items: center;
+    align-content: center;
+
+    .reviewForm {
+        display: inline-block;
+        position: relative;
+        width: 40%;
+        margin-left: auto;
+        // margin-right: auto;
+        text-align: center;
+        align-items: center;
+        align-content: center;
+        margin-top: 50px;
+        padding: 5em 3em;
+        background-color: white;
+        border: 2px solid #006266;
+        box-shadow: 5px 10px 12px black;
+        border-radius: 30px;
+        color: #006266;
+
+        label {
+            display: inline-block;
+            padding: 1em 0;
+            color: #006266;
+            font-size: larger;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .prodInput {
+                padding: 15px 30px;
+                border-radius: 10px;
+                margin-left: 30px;
+                width: 50%;
+            }
+
+            .ratingInput {
+                padding: 15px 30px;
+                border-radius: 10px;
+                margin-left: 30px;
+                height: 100px;
+                width: 50%;
+            }
+        }
+        .searchButton {
+            display: inline-block;
+            width: 150px;
+            padding: 1em 3em;
+            border-radius: 20px;
+            outline: none;
+            border: none;
+            margin-top: 30px;
+            background-color: #006266;
+            color: white;
         }
     }
 }

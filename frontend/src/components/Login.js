@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useCookies } from 'react-cookie';
 import Navbar from './Navbar'
 import '../styles/login.css'
 import axios from 'axios'
@@ -11,13 +13,16 @@ const Login = () => {
     const [password, setPassword] = useState('')
     const [loggedIn, setLoggedIn] = useState(false)
     const [check, setCheck] = useState(false)
+    const [cookies, setCookie] = useCookies(['user']);
+
+    let navigate = useNavigate()
 
     const getUser = async () => {
         try {
             const res = await axios.get(`http://localhost:5000/api/user/${email}`)
             console.log(email)
             console.log(res)
-            return res.data[0].password
+            return res.data[0]
 
         } catch (error) {
             console.log(error)
@@ -27,20 +32,25 @@ const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         const hash = await getUser()
-        console.log(hash, password)
-        const checking = comparePassword(password, hash)
+        console.log(hash.password, password)
+        const checking = comparePassword(password, hash.password)
         console.log(checking)
         if (checking) {
             try {
                 const res = await axios.post('http://localhost:5000/api/login', {
                     email: email,
-                    password: hash
+                    password: hash.password
                 })
                 console.log(res)
                 if (res.data[0].password === password) {
                     setLoggedIn(true)
                     console.log(loggedIn)
                 }
+
+                //SET COOKIE
+                setCookie('Name', await hash.first_name, { path: '/' })
+
+                navigate('/')
             } catch (error) {
                 console.log(error)
             }

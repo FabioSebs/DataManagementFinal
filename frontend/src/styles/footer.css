@@ -1,0 +1,43 @@
+.radiantFooter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 250px;
+}
+
+.radiantFooter .yellowBar {
+  height: 30px;
+  width: 100%;
+  background-color: #fac372;
+}
+
+.radiantFooter .navFooter {
+  background-color: #cde2d3;
+  padding: 2em 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: black;
+  gap: 130px;
+}
+
+.radiantFooter .infoFooter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 80px;
+  color: white;
+  padding: 0.5em 2em;
+  background-color: #006266;
+}
+/*# sourceMappingURL=footer.css.map */

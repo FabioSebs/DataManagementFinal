@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import Logo from "../images/fakeamazonlogo.jpg"
+// import Logo from "../images/fakeamazonlogo.jpg"
 import '../styles/navbar.css'
 import HomeIcon from '@mui/icons-material/Home';
 import PaidIcon from '@mui/icons-material/Paid';

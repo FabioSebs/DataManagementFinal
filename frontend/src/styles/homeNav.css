@@ -1,3 +1,17 @@
+.navUser {
+  z-index: 10;
+  position: absolute;
+  color: #006266;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 35px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: larger;
+}
+
 .homeNav {
   display: -webkit-box;
   display: -ms-flexbox;

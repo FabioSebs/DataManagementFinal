@@ -1,0 +1,26 @@
+.radiantFooter {
+    display: flex;
+    flex-direction: column;
+    margin-top: 250px;
+    .yellowBar {
+        height: 30px;
+        width: 100%;
+        background-color: #fac372;
+    }
+    .navFooter {
+        background-color: #cde2d3;
+        padding: 2em 3em;
+        display: flex;
+        justify-content: center;
+        color: black;
+        gap: 130px;
+    }
+    .infoFooter {
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        color: white;
+        padding: 0.5em 2em;
+        background-color: #006266;
+    }
+}

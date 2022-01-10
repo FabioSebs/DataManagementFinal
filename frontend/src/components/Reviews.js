@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import "../styles/reviews.css"
-import Navbar from './Navbar'
+import reviewBG from '../images/ReviewsBG.PNG'
+import Navbar from './HomeNav'
+import Footer from './Footer'
 
 function Reviews() {
     let [reviews, setReviews] = useState([])
+    let [prodID, setProdID] = useState('')
+    let [rating, setRating] = useState('')
+    let [review, setReview] = useState('')
 
     const fetchReviews = async () => {
         try {
@@ -19,6 +24,26 @@ function Reviews() {
         }
     }
 
+    const fetchRating = async (e) => {
+        e.preventDefault();
+        try {
+            const res = await axios.get(`http://localhost:5000/api/reviews/${prodID}`)
+            setRating(res.data[0].rating)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const fetchReview = async (e) => {
+        e.preventDefault();
+        try {
+            const res = await axios.get(`http://localhost:5000/api/reviews/${prodID}`)
+            setReview(res.data[0].review)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
     useEffect(() => {
         fetchReviews()
     }, [])
@@ -26,18 +51,67 @@ function Reviews() {
     return (
         <>
             <Navbar />
-            <div className='Reviews'>
-                {reviews ? reviews.map(review => {
-                    return (
-                        <div className='review'>
-                            <h3 className='title'> Product: {review.name} </h3>
-                            <h5 className='reviewText'> Review: {review.review}</h5>
-                            <h5 className='rating'>Rating: {review.rating}</h5>
-                        </div>
-                    )
-                }) : undefined
-                }
+
+            <div className='reviewsBG' >
+                <h1 className='topProducts'>Top Products</h1>
+                <img src={reviewBG} />
             </div>
+
+            <form className='ratingForm'>
+                <label>Product ID:
+                    <input className="prodInput" type="text" placeholder='Product ID' onChange={e => setProdID(e.currentTarget.value)} />
+                </label>
+                <label>Rating:
+                    <input className='ratingInput' type="text" placeholder={rating ? rating : 'Rating'} />
+                </label>
+                <button className='searchButton' onClick={e => fetchRating(e)}> Search </button>
+            </form>
+
+            <div className='titleReviews'>
+                <h1>Product Reviews</h1>
+            </div>
+
+            <div className='reviewFormContainer'>
+                <form className='reviewForm'>
+                    <label>Product ID:
+                        <input className="prodInput" type="text" placeholder='Product ID' onChange={e => setProdID(e.currentTarget.value)} />
+                    </label>
+
+                    <label>Review:
+                        <textarea className='ratingInput' type="text" placeholder={review ? review : ''}></textarea>
+                    </label>
+                    <div>
+                        <button className='searchButton' onClick={e => fetchReview(e)}> Search </button>
+                    </div>
+
+                </form>
+            </div>
+
+            <div className='listReviews'>
+                <h1>Product List</h1>
+            </div>
+
+            <div className='Reviews'>
+                <table className='reviewTable'>
+                    <tr className='reviewColumns'>
+                        <th>Product</th>
+                        <th>Review</th>
+                        <th>Rating</th>
+                    </tr>
+
+                    {reviews ? reviews.map(review => {
+                        return (
+                            <tr className='reviewRecord'>
+                                <td> {review.name} </td>
+                                <td>{review.review} </td>
+                                <td>{review.rating} </td>
+                            </tr>
+                        )
+                    }) : undefined
+                    }
+                </table>
+            </div>
+            <Footer />
         </>
     )
 }

@@ -1,12 +1,130 @@
+.purchasesHero {
+    position: relative;
+    top: 60px;
+    height: 500px;
+    color: white;
+    background: rgb(0, 98, 102);
+    background: linear-gradient(180deg, rgba(0, 98, 102, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    h1 {
+        position: relative;
+        display: block;
+        padding-top: 150px;
+        margin-left: 30px;
+        font-size: 100px;
+        text-shadow: 2px 2px 5px black;
+    }
+
+    h2 {
+        position: relative;
+        display: block;
+        margin-left: 40px;
+        font-size: 70px;
+        text-shadow: 2px 2px 5px black;
+    }
+}
+
+.tableSearch {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    gap: 30px;
+    top: 70px;
+    text-align: center;
+    color: #9c9696;
+    .tableSearchLabel {
+        display: flex;
+        flex-direction: column;
+
+        input {
+            align-items: center;
+            text-align: center;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            outline: #9c9696;
+            border: 1px solid #9c9696;
+        }
+    }
+    button {
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        padding: 0 1em;
+        background-color: #619ea0;
+        border: none;
+        color: white;
+    }
+}
+
+.oneResult {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    top: 140px;
+    margin-bottom: 100px;
+    text-align: center;
+
+    table {
+        border-top-style: solid;
+        border-bottom-style: solid;
+    }
+
+    thead {
+        tr {
+            th {
+                padding: 1em 2em;
+            }
+        }
+    }
+    tbody {
+        tr {
+            td {
+                padding: 1em 2em;
+            }
+        }
+    }
+}
+
+#customize {
+    top: 100px;
+}
+
+hr {
+    position: relative;
+    top: 90px;
+    height: 2px;
+    background-color: #7ec8ca;
+    // color: #619ea0;
+    border: 0.5px solid #9cdcdf;
+    margin: 0 2em;
+}
+
 .purchases {
     position: relative;
-    top: 120px;
+    top: 180px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    background-color: antiquewhite;
-    .purchase {
-        border: 2px solid black;
+    background-color: white;
+
+    .purchaseTable {
+        margin: 0 4em;
+        border-top: 2px solid black;
+        // background-color: #9c9696;
+
+        .purchaseColumn {
+            th {
+                padding: 1em 0em;
+                border-bottom: 2px solid #e1e1e1;
+            }
+        }
+        .purchaseRecord {
+            td {
+                border-bottom: 1px solid #e1e1e1;
+                padding: 1em 0em;
+            }
+        }
     }
 }

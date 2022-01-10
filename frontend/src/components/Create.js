@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import '../styles/create.css'
 import axios from 'axios'
-import Navbar from './Navbar'
-import crypto from 'crypto'
+import Navbar from './HomeNav'
+import Footer from './Footer'
+
 
 const Create = () => {
     let [productID, setProductID] = useState(undefined)
@@ -110,62 +111,94 @@ const Create = () => {
     return (
         <>
             <Navbar />
-            <div className='createContainer'>
-                <h1 className='titleProd'> Create a Product !</h1>
-                <form className='createForm'>
-                    <label> ASIN </label>
-                    <input type="text" onChange={(e) => { setAsin(e.currentTarget.value) }} />
-                    <label> Product Name </label>
-                    <input type="text" onChange={(e) => { setName(e.currentTarget.value) }} />
-                    <button type="button" onClick={createProduct}>Create</button>
-                </form>
 
-                <h1 className='titleReview'> Create a Review !</h1>
-                <form className='createForm'>
-                    <label> Product ID </label>
-                    <input type="text" onChange={(e) => { setProductID(e.currentTarget.value) }} />
-                    <label> Rating </label>
-                    <input type="number" min="0" max="5" onChange={(e) => { setRating(parseInt(e.currentTarget.value)) }} />
-                    <label> Review </label>
-                    <input type="text" onChange={(e) => { setReview(e.currentTarget.value) }} />
-                    <button type="button" onClick={createReview}>Create</button>
-                </form>
-                <h3 className='success'> {created ? "Successfully Created!" : undefined} </h3>
-
-                <h1 className='updateProd'> Update a Product !</h1>
-                <form className='createForm'>
-                    <label> Product ID </label>
-                    <input type="text" onChange={(e) => { setProductID(parseInt(e.currentTarget.value)) }} />
-                    <label> Product Name </label>
-                    <input type="text" onChange={(e) => { setName(e.currentTarget.value) }} />
-                    <button type="button" onClick={updateProduct}>Update</button>
-                </form>
-
-                <h1 className='updateReview'> Update a Review !</h1>
-                <form className='createForm'>
-                    <label> Review ID </label>
-                    <input type="text" onChange={(e) => { setReviewID(parseInt(e.currentTarget.value)) }} />
-                    <label> Rating </label>
-                    <input type="text" onChange={(e) => { setRating(parseInt(e.currentTarget.value)) }} />
-                    <label> Review </label>
-                    <input type="text" onChange={(e) => { setReview(e.currentTarget.value) }} />
-                    <button type="button" onClick={updateReview}>Update</button>
-                </form>
-
-                <h1 className='deleteProduct'> Delete a Product !</h1>
-                <form className='createForm'>
-                    <label> Product ID </label>
-                    <input type="text" onChange={(e) => { setProductID(parseInt(e.currentTarget.value)) }} />
-                    <button type="button" onClick={deleteProduct}>Delete</button>
-                </form>
-
-                <h1 className='deleteReview'> Delete a Review !</h1>
-                <form className='createForm'>
-                    <label> Review ID </label>
-                    <input type="text" onChange={(e) => { setReviewID(parseInt(e.currentTarget.value)) }} />
-                    <button type="button" onClick={deleteReview}>Delete</button>
-                </form>
+            <div className='purchasesHero'>
+                <h1>Radiant Reseller</h1>
+                <h2>( Create Product )</h2>
             </div>
+
+            <div className='createProductContainer'>
+                <h1> Create a Product</h1>
+                <form>
+                    <div className='asin'>
+                        <label> ASIN </label>
+                        <input type="text" onChange={(e) => { setAsin(e.currentTarget.value) }} />
+                    </div>
+                    <div className='pname'>
+                        <label> Product Name </label>
+                        <input type="text" onChange={(e) => { setName(e.currentTarget.value) }} />
+                    </div>
+                </form>
+                <button className='createButton' type="button" onClick={createProduct}>Create</button>
+            </div>
+
+            <div className='createReviewContainer'>
+                <h1> Create a Review</h1>
+                <form >
+                    <div className='productID'>
+                        <label> Product ID </label>
+                        <input type="text" onChange={(e) => { setProductID(e.currentTarget.value) }} />
+                    </div>
+
+                    <div className='rating'>
+                        <label> Rating </label>
+                        <input type="number" min="0" max="5" onChange={(e) => { setRating(parseInt(e.currentTarget.value)) }} />
+                    </div>
+
+                    <div className='review'>
+                        <label> Review </label>
+                        <input type="text" onChange={(e) => { setReview(e.currentTarget.value) }} />
+                    </div>
+                </form>
+                <button className='createButton' type="button" onClick={createReview}>Create</button>
+                <h3 className='success'> {created ? "Successfully Created!" : undefined} </h3>
+            </div>
+
+            <div className='updateDeleteProductContainer'>
+                <div className='updateProductContainer'>
+                    <h1 className='updateProd'> Update a Product</h1>
+                    <form className='createForm'>
+                        <label> Product ID </label>
+                        <input type="text" onChange={(e) => { setProductID(parseInt(e.currentTarget.value)) }} />
+                        <label> Product Name </label>
+                        <input type="text" onChange={(e) => { setName(e.currentTarget.value) }} />
+                        <button className='createButton' type="button" onClick={updateProduct}>Update</button>
+                    </form>
+                </div>
+
+                <div className='deleteProductContainer'>
+                    <h1 className='updateReview'> Update a Review</h1>
+                    <form className='createForm'>
+                        <label> Review ID </label>
+                        <input type="text" onChange={(e) => { setReviewID(parseInt(e.currentTarget.value)) }} />
+                        <label> Rating </label>
+                        <input type="text" onChange={(e) => { setRating(parseInt(e.currentTarget.value)) }} />
+                        <label> Review </label>
+                        <input type="text" onChange={(e) => { setReview(e.currentTarget.value) }} />
+                        <button className='createButton' type="button" onClick={updateReview}>Update</button>
+                    </form>
+                </div>
+            </div>
+            <div className='updateDeleteReviewContainer'>
+                <div className='updateReviewContainer'>
+                    <h1 className='deleteProduct'> Delete a Product</h1>
+                    <form className='createForm'>
+                        <label> Product ID </label>
+                        <input type="text" onChange={(e) => { setProductID(parseInt(e.currentTarget.value)) }} />
+                        <button className='createButton' type="button" onClick={deleteProduct}>Delete</button>
+                    </form>
+                </div>
+
+                <div className='deleteReviewContainer'>
+                    <h1 className='deleteReview'> Delete a Review</h1>
+                    <form className='createForm'>
+                        <label> Review ID </label>
+                        <input type="text" onChange={(e) => { setReviewID(parseInt(e.currentTarget.value)) }} />
+                        <button className='createButton' type="button" onClick={deleteReview}>Delete</button>
+                    </form>
+                </div>
+            </div>
+            <Footer />
         </>
     )
 }

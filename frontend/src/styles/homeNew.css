@@ -108,6 +108,582 @@
   width: 1200px;
 }
 
+.aboutus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  margin: 5em 10em;
+}
+
+.aboutus div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.aboutus div span {
+  height: 4px;
+  width: 120px;
+  background-color: #006266;
+}
+
+.aboutus div h1 {
+  font-size: 80px;
+  color: #006266;
+}
+
+.aboutus h2 {
+  font-size: 30px;
+}
+
+.aboutus p {
+  font-size: 20px;
+}
+
+.visionMission {
+  text-align: center;
+}
+
+.visionMission .blob {
+  position: absolute;
+  width: 1800px;
+  height: 1050px;
+  top: 1750px;
+  left: 500px;
+  margin-top: -250px;
+  margin-left: -250px;
+  z-index: -1;
+}
+
+.visionMission h1 {
+  font-size: 60px;
+  margin-right: 600px;
+  margin-top: 350px;
+  color: white;
+}
+
+.visionMission div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
+}
+
+.visionMission div .homeCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 2em 2em;
+  background: #006266;
+  background: -webkit-gradient(linear, left top, left bottom, from(#006266), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(180deg, #006266 0%, rgba(255, 255, 255, 0) 100%);
+  -webkit-box-shadow: 2px 2px 7px black;
+          box-shadow: 2px 2px 7px black;
+  border-radius: 30px;
+  width: 300px;
+  text-align: left;
+}
+
+.visionMission div .homeCard h2 {
+  color: #ffcf77;
+  font-size: 40px;
+}
+
+.visionMission div .homeCard p {
+  color: white;
+  font-size: 20px;
+}
+
+.visionMission div .homeCard button {
+  padding: 0.3em 1em;
+  background-color: #006266;
+  border-radius: 10px;
+  color: white;
+  border: 2px solid white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 200px;
+}
+
+.visionMission div .homeCard svg {
+  position: relative;
+  color: white;
+  height: 20px;
+}
+
+.clientTestimony {
+  position: relative;
+  height: 30px;
+  width: 70%;
+  background-color: #006266;
+  margin: auto;
+  text-align: center;
+  color: #fac372;
+  -webkit-box-shadow: 3px 3px 7px black;
+          box-shadow: 3px 3px 7px black;
+  padding: 1em 0em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  top: 400px;
+}
+
+.clientTestimony h1 {
+  display: inline-block;
+  width: 400px;
+  margin: 0;
+}
+
+.clientTestimonyContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 40px;
+  position: relative;
+  top: 600px;
+}
+
+.clientTestimonyContainer .clientTestimonyCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid #fac372;
+  border-radius: 30px;
+  height: 500px;
+  width: 300px;
+  color: #006266;
+  margin-bottom: 300px;
+}
+
+.clientTestimonyContainer .clientTestimonyCard .circleImage {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  bottom: 140px;
+  border-radius: 50%;
+}
+
+.clientTestimonyContainer .clientTestimonyCard p {
+  position: relative;
+  bottom: 90px;
+  width: 60%;
+  font-size: 20px;
+}
+
+.topPartners {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  color: #006266;
+  margin-top: 450px;
+  text-align: center;
+}
+
+.topPartners h1 {
+  font-size: 60px;
+}
+
+.topPartners span {
+  position: relative;
+  height: 4px;
+  width: 400px;
+  background-color: #006266;
+  margin: auto;
+  bottom: 40px;
+}
+
+.logoContainer {
+  position: relative;
+  top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 70px;
+  background-color: #cde2d3;
+  margin-bottom: 200px;
+  padding: 3em 0;
+}
+
+.logoContainer div {
+  background-color: white;
+  border-radius: 50px;
+}
+
+.logoContainer div img {
+  height: 300px;
+  width: 400px;
+  border: 3px solid black;
+  border-radius: 50px;
+  padding: 2em;
+  -webkit-box-shadow: 3px 10px 10px black;
+          box-shadow: 3px 10px 10px black;
+}
+
+.newsEvents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.newsEvents span {
+  margin-right: 40px;
+  height: 5px;
+  width: 150px;
+  background-color: #006266;
+}
+
+.newsEvents h1 {
+  font-size: 50px;
+  color: #006266;
+  text-shadow: 2px 2px 4px black;
+}
+
+.newsEventsContainers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: center;
+          flex-direction: center;
+  gap: 250px;
+  overflow: hidden;
+}
+
+.newsEventsContainers .newsLeft .newsBg {
+  border-radius: 30px;
+  -webkit-box-shadow: 2px 2px 5px black;
+          box-shadow: 2px 2px 5px black;
+  margin-left: 15%;
+  height: 800px;
+}
+
+.newsEventsContainers .newsLeft .newsBlob {
+  position: absolute;
+  top: 4350px;
+  opacity: 70%;
+  height: 950px;
+  margin: 0;
+  right: 1250px;
+}
+
+.newsEventsContainers .newsLeft div {
+  text-align: center;
+  position: absolute;
+  width: 600px;
+  top: 4650px;
+  left: 150px;
+  z-index: 4;
+  color: #006266;
+}
+
+.newsEventsContainers .newsLeft div h1 {
+  font-size: 60px;
+}
+
+.newsEventsContainers .newsLeft div p {
+  font-size: 30px;
+}
+
+.newsEventsContainers .newsLeft div button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #006266;
+  padding: 1em;
+  color: #f3f7ff;
+  gap: 10px;
+  border-radius: 20px;
+  border: none;
+  margin-left: 380px;
+}
+
+.newsEventsContainers .newsRight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  height: 800px;
+}
+
+.newsEventsContainers .newsRight div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 230px;
+  width: 900px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1em;
+  border-radius: 20px;
+  -webkit-box-shadow: 2px 2px 5px black;
+          box-shadow: 2px 2px 5px black;
+}
+
+.newsEventsContainers .newsRight div img {
+  height: 190px;
+  width: 190px;
+  border-radius: 50%;
+}
+
+.newsEventsContainers .newsRight div p {
+  position: relative;
+  text-align: center;
+  margin-left: 40px;
+  font-size: 25px;
+  overflow-wrap: hidden;
+  color: #006266;
+}
+
+.newsEventsContainers .newsRight button {
+  padding: 1em 0;
+  background-color: #006266;
+  border-radius: 20px;
+  color: #f3f7ff;
+}
+
+.newsEventsContainers .newsRight button svg {
+  height: 40px;
+  width: 40px;
+}
+
+@media screen and (max-width: 1700px) {
+  .newsEventsContainers {
+    gap: 300px !important;
+  }
+  .newsLeft .newsBg {
+    border-radius: 30px;
+    -webkit-box-shadow: 2px 2px 5px black;
+            box-shadow: 2px 2px 5px black;
+    margin-left: 15%;
+    height: 600px !important;
+  }
+  .newsLeft .newsBlob {
+    position: absolute;
+    top: 4450px !important;
+    opacity: 70%;
+    height: 650px !important;
+    margin: 0;
+    right: 600px !important;
+  }
+  .newsLeft div {
+    text-align: center;
+    position: absolute;
+    width: 300px !important;
+    top: 4650px !important;
+    left: 180px !important;
+    z-index: 4;
+    color: #006266;
+  }
+  .newsLeft div h1 {
+    font-size: 30px !important;
+  }
+  .newsLeft div p {
+    font-size: 20px !important;
+  }
+  .newsLeft div button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #006266;
+    padding: 1em;
+    color: #f3f7ff;
+    gap: 10px;
+    border-radius: 20px;
+    border: none;
+    margin-left: 100px !important;
+  }
+  .newsRight {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 30px;
+    height: 800px;
+  }
+  .newsRight div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 130px !important;
+    width: 450px !important;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 1em;
+    border-radius: 20px;
+    -webkit-box-shadow: 2px 2px 5px black;
+            box-shadow: 2px 2px 5px black;
+  }
+  .newsRight div img {
+    height: 90px !important;
+    width: 90px !important;
+    border-radius: 50%;
+  }
+  .newsRight div p {
+    position: relative;
+    text-align: center;
+    margin-left: 40px;
+    font-size: 25px;
+    overflow-wrap: hidden;
+    color: #006266;
+  }
+  .visionMission {
+    text-align: center;
+  }
+  .visionMission .blob {
+    position: absolute;
+    width: 900px !important;
+    height: 700px !important;
+    top: 1750px;
+    margin-left: -750px !important;
+    margin-top: -250px;
+    margin-left: -250px;
+    z-index: -1;
+  }
+  .visionMission h1 {
+    font-size: 60px;
+    margin-right: 600px;
+    margin-top: 350px;
+    color: white;
+  }
+  .visionMission div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 30px;
+  }
+  .visionMission div .homeCard {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding: 2em 2em;
+    background: #006266;
+    background: -webkit-gradient(linear, left top, left bottom, from(#006266), to(rgba(255, 255, 255, 0)));
+    background: linear-gradient(180deg, #006266 0%, rgba(255, 255, 255, 0) 100%);
+    -webkit-box-shadow: 2px 2px 7px black;
+            box-shadow: 2px 2px 7px black;
+    border-radius: 30px;
+    width: 300px;
+    text-align: left;
+  }
+  .visionMission div .homeCard h2 {
+    color: #ffcf77;
+    font-size: 40px;
+  }
+  .visionMission div .homeCard p {
+    color: white;
+    font-size: 20px;
+  }
+  .visionMission div .homeCard button {
+    padding: 0.3em 1em;
+    background-color: #006266;
+    border-radius: 10px;
+    color: white;
+    border: 2px solid white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 30px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 200px;
+  }
+  .visionMission div .homeCard svg {
+    position: relative;
+    color: white;
+    height: 20px;
+  }
+}
+
 @media screen and (max-width: 1300px) {
   .heroText {
     color: white;
@@ -161,6 +737,171 @@
     height: 400px !important;
     width: 600px !important;
     padding-bottom: 300px;
+  }
+  .newsEventsContainers {
+    gap: 100px !important;
+  }
+  .newsLeft .newsBg {
+    border-radius: 30px;
+    -webkit-box-shadow: 2px 2px 5px black;
+            box-shadow: 2px 2px 5px black;
+    margin-left: 15%;
+    height: 400px !important;
+  }
+  .newsLeft .newsBlob {
+    position: absolute;
+    top: 4450px !important;
+    opacity: 70%;
+    height: 450px !important;
+    margin: 0;
+    right: 400px !important;
+  }
+  .newsLeft div {
+    text-align: center;
+    position: absolute;
+    width: 300px !important;
+    top: 4550px !important;
+    left: 100px !important;
+    z-index: 4;
+    color: #006266;
+  }
+  .newsLeft div h1 {
+    font-size: 30px !important;
+  }
+  .newsLeft div p {
+    font-size: 20px !important;
+  }
+  .newsLeft div button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #006266;
+    padding: 1em;
+    color: #f3f7ff;
+    gap: 10px;
+    border-radius: 20px;
+    border: none;
+    margin-left: 100px !important;
+  }
+  .newsRight {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 30px;
+    height: 800px;
+  }
+  .newsRight div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 130px !important;
+    width: 450px !important;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 1em;
+    border-radius: 20px;
+    -webkit-box-shadow: 2px 2px 5px black;
+            box-shadow: 2px 2px 5px black;
+  }
+  .newsRight div img {
+    height: 90px !important;
+    width: 90px !important;
+    border-radius: 50%;
+  }
+  .newsRight div p {
+    position: relative;
+    text-align: center;
+    margin-left: 40px;
+    font-size: 25px;
+    overflow-wrap: hidden;
+    color: #006266;
+  }
+  .visionMission {
+    text-align: center;
+  }
+  .visionMission .blob {
+    position: absolute;
+    width: 900px !important;
+    height: 700px !important;
+    top: 1750px;
+    margin-left: -750px !important;
+    margin-top: -250px;
+    margin-left: -250px;
+    z-index: -1;
+  }
+  .visionMission h1 {
+    font-size: 60px;
+    margin-right: 600px;
+    margin-top: 350px;
+    color: white;
+  }
+  .visionMission div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 30px;
+  }
+  .visionMission div .homeCard {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding: 2em 2em;
+    background: #006266;
+    background: -webkit-gradient(linear, left top, left bottom, from(#006266), to(rgba(255, 255, 255, 0)));
+    background: linear-gradient(180deg, #006266 0%, rgba(255, 255, 255, 0) 100%);
+    -webkit-box-shadow: 2px 2px 7px black;
+            box-shadow: 2px 2px 7px black;
+    border-radius: 30px;
+    width: 300px;
+    text-align: left;
+  }
+  .visionMission div .homeCard h2 {
+    color: #ffcf77;
+    font-size: 40px;
+  }
+  .visionMission div .homeCard p {
+    color: white;
+    font-size: 20px;
+  }
+  .visionMission div .homeCard button {
+    padding: 0.3em 1em;
+    background-color: #006266;
+    border-radius: 10px;
+    color: white;
+    border: 2px solid white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 30px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 200px;
+  }
+  .visionMission div .homeCard svg {
+    position: relative;
+    color: white;
+    height: 20px;
   }
 }
 /*# sourceMappingURL=homeNew.css.map */
