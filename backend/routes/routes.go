@@ -4,6 +4,7 @@ import (
 	"datamanagement/database"
 	"datamanagement/models"
 	"fmt"
+	"strconv"
 	"strings"
 
 	"github.com/gofiber/fiber/v2"
@@ -107,6 +108,13 @@ func Routes(app *fiber.App) {
 
 		db.Create(&payload)
 
+		productFact := models.ProductFact{
+			Product_id: payload.Product_id,
+			Method:     "Creating Product",
+		}
+
+		db.Create(&productFact)
+
 		return c.SendStatus(200)
 	})
 
@@ -122,6 +130,14 @@ func Routes(app *fiber.App) {
 
 		db.Create(&payload)
 
+		productFact := models.ProductFact{
+			Product_id: payload.Product_id,
+			Review_id:  payload.Review_id,
+			Method:     "Creating Review",
+		}
+
+		db.Create(&productFact)
+
 		return c.SendStatus(200)
 	})
 
@@ -136,6 +152,12 @@ func Routes(app *fiber.App) {
 		}
 
 		db.Create(&payload)
+
+		productFact := models.ProductFact{
+			Method: "Creating User",
+		}
+
+		db.Create(&productFact)
 
 		return c.SendStatus(200)
 	})
@@ -167,6 +189,18 @@ func Routes(app *fiber.App) {
 		db := database.Connect()
 		payload := models.Product{}
 		db.Where("product_id = ?", c.Params("id")).Delete(&payload)
+
+		prod_id, err := strconv.Atoi(c.Params("id"))
+		if err != nil {
+			return err
+		}
+
+		productFact := models.ProductFact{
+			Product_id: prod_id,
+			Method:     "Deleting Product",
+		}
+
+		db.Create(&productFact)
 		return c.SendStatus(200)
 	})
 
@@ -175,6 +209,20 @@ func Routes(app *fiber.App) {
 		db := database.Connect()
 		payload := models.Review{}
 		db.Where("review_id = ?", c.Params("id")).Delete(&payload)
+
+		review_id, err := strconv.Atoi(c.Params("id"))
+
+		if err != nil {
+			return err
+		}
+
+		productFact := models.ProductFact{
+			Product_id: review_id,
+			Method:     "Deleting Review",
+		}
+
+		db.Create(&productFact)
+
 		return c.SendStatus(200)
 	})
 
@@ -187,6 +235,18 @@ func Routes(app *fiber.App) {
 		if err := c.BodyParser(&payload); err != nil {
 			return err
 		}
+
+		product_id, err := strconv.Atoi(c.Params("id"))
+		if err != nil {
+			return err
+		}
+
+		productFact := models.ProductFact{
+			Product_id: product_id,
+			Method:     "Updating Product",
+		}
+
+		db.Create(&productFact)
 
 		db.Model(models.Product{}).Where("product_id = ?", c.Params("id")).Update("name", payload.Name)
 		return c.SendStatus(200)
@@ -201,6 +261,18 @@ func Routes(app *fiber.App) {
 		if err := c.BodyParser(&payload); err != nil {
 			return err
 		}
+
+		review_id, err := strconv.Atoi(c.Params("id"))
+		if err != nil {
+			return err
+		}
+
+		productFact := models.ProductFact{
+			Product_id: review_id,
+			Method:     "Updating Review",
+		}
+
+		db.Create(&productFact)
 
 		db.Model(models.Review{}).Where("review_id = ?", c.Params("id")).Update("reviews", payload.Reviews).Update("rating", payload.Rating)
 		return c.SendStatus(200)

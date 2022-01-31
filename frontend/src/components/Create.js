@@ -92,7 +92,7 @@ const Create = () => {
 
     const deleteProduct = async () => {
         try {
-            const res = await axios.delete(`http://localhost:5000/api/delete/review/${productID}`)
+            const res = await axios.delete(`http://localhost:5000/api/delete/product/${productID}`)
             console.log(res.status)
         } catch (e) {
             console.log(e)

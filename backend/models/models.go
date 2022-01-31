@@ -33,3 +33,10 @@ type User struct {
 	Email      string `json:"email"`
 	Password   string `json:"password"`
 }
+
+type ProductFact struct {
+	Product_id  int    `json:"product_id"`
+	Purchase_id int    `json:"purchase_id"`
+	Review_id   int    `json:"review_id"`
+	Method      string `json:"method"`
+}

@@ -13,7 +13,7 @@
 }
 
 .Reviews .reviewTable {
-  border: 1px solid #ee5a24;
+  border-top: 1px solid black;
   -webkit-box-shadow: 0px 10px 20px black;
           box-shadow: 0px 10px 20px black;
 }
@@ -24,17 +24,18 @@
 }
 
 .Reviews .reviewTable .reviewColumns th {
+  font-size: 20px;
   padding: 0 2em;
 }
 
 .Reviews .reviewTable .reviewRecord {
-  color: white;
-  text-shadow: 3px 3px 5px black;
-  background-color: #f79f1f;
+  color: black;
+  background-color: white;
 }
 
 .Reviews .reviewTable .reviewRecord td {
   padding: 2em 1em;
+  border-bottom: 1px solid black;
 }
 
 div.reviewsBG {

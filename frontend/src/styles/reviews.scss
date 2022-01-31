@@ -7,22 +7,25 @@
     background-color: white;
 
     .reviewTable {
-        border: 1px solid #ee5a24;
+        border-top: 1px solid black;
         box-shadow: 0px 10px 20px black;
+
         .reviewColumns {
             color: white;
             background-color: #006266;
             th {
+                font-size: 20px;
                 padding: 0 2em;
             }
         }
 
         .reviewRecord {
-            color: white;
-            text-shadow: 3px 3px 5px black;
-            background-color: #f79f1f;
+            color: black;
+            // text-shadow: 1px 1px 2px black;
+            background-color: white;
             td {
                 padding: 2em 1em;
+                border-bottom: 1px solid black;
             }
         }
     }
