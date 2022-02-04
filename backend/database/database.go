@@ -29,10 +29,10 @@ func goDotEnvVariable(key string) string {
 // CONNECTION
 func Connect() *gorm.DB {
 	// docker
-	dsn := "root:@tcp(db:3306)/amazon_products"
+	// dsn := "root:@tcp(db:3306)/amazon_products"
 
 	// local
-	// dsn := "root:@tcp(localhost:3306)/amazon_products"
+	dsn := "root:@tcp(localhost:3306)/amazon_products"
 
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 

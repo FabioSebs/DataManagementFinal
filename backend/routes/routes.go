@@ -56,6 +56,7 @@ func Routes(app *fiber.App) {
 
 		fmt.Println(id)
 		db.Find(&products, "product_id = ?", id)
+		fmt.Println(c.JSON(products))
 		return c.JSON(products)
 	})
 

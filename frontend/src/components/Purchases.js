@@ -47,9 +47,9 @@ const Purchases = () => {
             <div className='tableSearch'>
                 <label className='tableSearchLabel'>
                     Purchase ID
-                    <input type="text" onChange={e => setPurchaseID(e.currentTarget.value)} />
+                    <input type="text" id="purchaseInput" onChange={e => setPurchaseID(e.currentTarget.value)} />
                 </label>
-                <button onClick={e => fetchPurchase()}>
+                <button id="purchaseButton" onClick={e => fetchPurchase()}>
                     SHOW <SearchIcon />
                 </button>
             </div>

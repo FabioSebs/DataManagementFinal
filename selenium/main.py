@@ -1,5 +1,3 @@
-from re import search
-from webbrowser import get
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys

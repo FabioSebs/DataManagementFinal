@@ -59,12 +59,12 @@ function Reviews() {
 
             <form className='ratingForm'>
                 <label>Product ID:
-                    <input className="prodInput" type="text" placeholder='Product ID' onChange={e => setProdID(e.currentTarget.value)} />
+                    <input className="prodInput" id='ratingTest' type="text" placeholder='Product ID' onChange={e => setProdID(e.currentTarget.value)} />
                 </label>
                 <label>Rating:
                     <input className='ratingInput' type="text" placeholder={rating ? rating : 'Rating'} />
                 </label>
-                <button className='searchButton' onClick={e => fetchRating(e)}> Search </button>
+                <button className='searchButton' id="ratingTestButton" onClick={e => fetchRating(e)}> Search </button>
             </form>
 
             <div className='titleReviews'>
@@ -74,14 +74,14 @@ function Reviews() {
             <div className='reviewFormContainer'>
                 <form className='reviewForm'>
                     <label>Product ID:
-                        <input className="prodInput" type="text" placeholder='Product ID' onChange={e => setProdID(e.currentTarget.value)} />
+                        <input className="prodInput" id='reviewTest' type="text" placeholder='Product ID' onChange={e => setProdID(e.currentTarget.value)} />
                     </label>
 
                     <label>Review:
                         <textarea className='ratingInput' type="text" placeholder={review ? review : ''}></textarea>
                     </label>
                     <div>
-                        <button className='searchButton' onClick={e => fetchReview(e)}> Search </button>
+                        <button className='searchButton' id="reviewTestButton" onClick={e => fetchReview(e)}> Search </button>
                     </div>
 
                 </form>
